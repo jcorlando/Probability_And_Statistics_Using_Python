@@ -2,9 +2,9 @@ import numpy
 import matplotlib.pyplot as plt
 
 # Create vector
-Position = numpy.array([ [3],
-                         [4],
-                         [5] ])
+Position = numpy.array([ [2],
+                         [3],
+                         [4] ])
 
 
 # Print vector contents
