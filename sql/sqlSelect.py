@@ -2,7 +2,11 @@ import mysql.connector
 import time
 import json
 import requests
+from datetime import timedelta
+from datetime import datetime
 
+start_time = time.monotonic()
+print("\nStart Time of Program Execution  == ", datetime.now(), "\n")
 
 f = open("user.txt", "r")
 userName = f.read()
@@ -46,5 +50,8 @@ for each in myResult:
     with open(writePath, 'w') as writeFile:
         writeFile.write(json.dumps(assetDailyData))
     writeFile.close()
-    print("Finished Gathering Data For Asset  == ", symbol)
+    print("Finished Gathering & Publishing Data For Asset  => ", symbol)
     time.sleep(14)
+
+end_time = time.monotonic()
+print("\nTime taken to execute program  == ", timedelta(seconds=end_time - start_time), "\n")
