@@ -1,0 +1,27 @@
+#!/usr/bin/python3
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Data for plotting
+t = np.arange(-5.0, 3.0, 0.01)
+
+x = (t*t) + (2 * t)
+y = t + 1
+
+vect1OriginX = ((-1.999)*(-1.999)) + (2 * (-1.999))
+vect1OriginY = (-1.999) + 1
+vect1DestX = 1
+vect1DestY = 1
+
+array = np.array([[vect1OriginX, vect1OriginY, vect1DestX, vect1DestY]])
+X, Y, U, V = zip(*array)
+
+fig, ax = plt.subplots()
+ax.set(xlabel='x', ylabel='y', title='Problem 1 Section 1.1')
+ax.plot(x, y)
+ax = plt.gca()
+ax.quiver(X, Y, U, V, color='steelblue', angles='xy', scale_units='xy', width=0.0017, scale=1)
+
+ax.grid()
+
+plt.show()
