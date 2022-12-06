@@ -1,0 +1,39 @@
+#!/usr/bin/python3
+import matplotlib.pyplot as plt
+import numpy as np
+import createVectors
+
+# Data for plotting
+t = np.arange(-3.0, 3.0, 0.01)
+
+x = (2*t) + 4
+y = t - 1
+
+# Create Arrows For Showing Graph Direction
+point1Origin = -2.2
+point1Dest = -2.0
+point2Origin = 1.0
+point2Dest = 1.2
+
+# Create/Plot 2D Curve
+fig, ax = plt.subplots()
+ax.set(xlabel='x', ylabel='y', title='Problem 3 Section 1.1')
+ax.plot(x, y)
+
+# Create 1st Direction Arrow
+vect1OriginX, vect1OriginY, vect1DestX, vect1DestY = createVectors.create_vector_points(point1Origin, point1Dest)
+array = np.array([[vect1OriginX, vect1OriginY, vect1DestX, vect1DestY]])
+X, Y, U, V = zip(*array)
+ax = plt.gca()
+ax.quiver(X, Y, U, V, color='steelblue', angles='xy', scale_units='xy', width=0.006, scale=1)
+
+# Create 2nd Direction Arrow
+vect2OriginX, vect2OriginY, vect2DestX, vect2DestY = createVectors.create_vector_points(point2Origin, point2Dest)
+array = np.array([[vect2OriginX, vect2OriginY, vect2DestX, vect2DestY]])
+X, Y, U, V = zip(*array)
+ax = plt.gca()
+ax.quiver(X, Y, U, V, color='steelblue', angles='xy', scale_units='xy', width=0.006, scale=1)
+
+ax.grid()
+
+plt.show()
