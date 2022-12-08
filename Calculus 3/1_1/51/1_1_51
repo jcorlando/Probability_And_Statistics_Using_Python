@@ -4,20 +4,20 @@ import numpy as np
 import createVectors
 
 # Data for plotting
-theta = np.arange(0.0001, 4*np.pi, 0.0001)
+theta = np.arange(0.0001, 6*np.pi, 0.0001)
 
-x = 3 - 2*np.cos(theta)
-y = -5 + 3*np.sin(theta)
+x = theta + np.sin(theta)
+y = 1 - np.cos(theta)
 
 # Create Arrows For Showing Graph Direction
-point1Origin = 1.6
-point1Dest = 1.65
-point2Origin = 4.5
-point2Dest = 4.55
+point1Origin = 1.10
+point1Dest = 1.30
+point2Origin = 11.00
+point2Dest = 11.20
 
 # Create/Plot 2D Curve
 fig, ax = plt.subplots()
-ax.set(xlabel='x', ylabel='y', title='Problem 13 Section 1.1')
+ax.set(xlabel='x', ylabel='y', title='Problem 51 Section 1.1')
 ax.plot(x, y)
 
 # ##Create 1st Direction Arrow
@@ -35,5 +35,9 @@ ax = plt.gca()
 ax.quiver(X, Y, U, V, color='steelblue', angles='xy', scale_units='xy', width=0.006, scale=1)
 
 ax.grid()
+
+# Center Plot On Valuable Information
+# plt.xlim([-1, 25])
+# plt.ylim([-9, 5])
 
 plt.show()
