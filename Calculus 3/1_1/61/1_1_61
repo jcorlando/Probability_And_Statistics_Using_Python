@@ -1,0 +1,24 @@
+#!/usr/bin/python3
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Data for plotting
+t = np.arange(-2, 2, 0.0001)
+
+x = np.cosh(t)
+y = np.sinh(t)
+
+# Create Arrows For Showing Graph Direction
+point1Origin = (np.pi/6)
+point1Dest = (np.pi/6) + 0.25
+point2Origin = 2.50
+point2Dest = 2.75
+
+# Create/Plot 2D Curve
+fig, ax = plt.subplots()
+ax.set(xlabel='x', ylabel='y', title='Problem 61 Section 1.1')
+ax.plot(x, y)
+
+ax.grid()
+
+plt.show()

@@ -1,0 +1,22 @@
+#!/usr/bin/python3
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Data for plotting
+t = np.arange(-2*np.pi, 2*np.pi, 0.0001)
+
+x = 8 + 2*t
+y = 1*(t/t)
+
+# Create/Plot 2D Curve
+fig, ax = plt.subplots()
+ax.set(xlabel='x', ylabel='y', title='Problem 1 Section 1.2')
+ax.plot(x, y)
+
+ax.grid()
+
+# Center Plot On Valuable Information
+# plt.xlim([-15, 15])
+# plt.ylim([-20, 20])
+
+plt.show()
