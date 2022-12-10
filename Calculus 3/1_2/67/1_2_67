@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+import sympy as smp
+import numpy as np
+
+t = smp.symbols('t')
+
+t_eval = (np.pi/4)
+
+x = smp.cos(t)
+y = 8*smp.sin(t)
+
+dy_dt = smp.diff(y, t)
+dx_dt = smp.diff(x, t)
+dy_dx = (dy_dt/dx_dt)
+
+slope = dy_dx.subs(t, smp.pi/4)
+
+print("Slope of the line at parameter pi/4  ==  ", slope)
+print("Slope of the line  ==  ", slope)

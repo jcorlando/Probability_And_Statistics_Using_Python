@@ -1,0 +1,48 @@
+#!/usr/bin/python3
+import sympy
+import sympy as smp
+from sympy import pprint
+
+# Write the equation of the tangent line in
+# cartesian coordinates for the given parameter t
+
+t = smp.symbols('t')
+
+# x(t)
+x = smp.exp(t)
+print("\nx  ==  \n")
+pprint(x)
+print("\n-----------------------------------------")
+# y(t)
+y = (t-1)**2
+print("\n\ny  ==  \n")
+pprint(y)
+print("\n-----------------------------------------")
+
+# Solve x for point @(1, 1)
+x_solved = sympy.solvers.solve(x - 1)
+print("x_solved for t  ==  \n")
+pprint(x_solved)
+print("----------------------------\n")
+
+# Solve y for point @(1, 1)
+y_solved = sympy.solvers.solve(y - 1)
+print("y_solved for t  ==  \n")
+pprint(y_solved)
+print("----------------------------\n")
+
+# From here on t = 0 determined from above
+
+dy_dt = smp.diff(y, t)
+dx_dt = smp.diff(x, t)
+dy_dx = (dy_dt/dx_dt)
+
+print("\n\ndy/dx  ==  \n")
+pprint(dy_dx)
+print("----------------------------\n")
+
+# Extracted points for point-intercept form formula
+slope_m = dy_dx.subs(t, 0)
+print("Slope(m)  ==  \n")
+pprint(slope_m)
+print("----------------------------\n")

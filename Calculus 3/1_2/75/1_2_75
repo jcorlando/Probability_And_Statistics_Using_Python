@@ -1,0 +1,33 @@
+#!/usr/bin/python3
+import sympy as smp
+from sympy import pprint
+
+t = smp.symbols('t')
+
+x = smp.exp(smp.sqrt(t))
+print("\nx  ==  \n")
+pprint(x)
+print("\n-----------------------------------------")
+y = 1 - smp.log(t**2)
+print("\n\ny  ==  \n")
+pprint(y)
+print("\n-----------------------------------------")
+
+dy_dt = smp.diff(y, t)
+dx_dt = smp.diff(x, t)
+dy_dx = (dy_dt/dx_dt)
+
+print("\n\ndy/dx  ==  \n")
+pprint(dy_dx)
+print("----------------------------\n")
+
+# Extracted points for point-intercept form formula
+x_point = x.subs(t, 1)
+print("x point  ==  \n")
+pprint(x_point)
+print("----------------------------\n")
+
+y_point = y.subs(t, 1)
+print("y point  ==  \n")
+pprint(y_point)
+print("----------------------------\n")

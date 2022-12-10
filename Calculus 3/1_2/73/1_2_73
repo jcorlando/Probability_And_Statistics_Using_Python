@@ -1,0 +1,30 @@
+#!/usr/bin/python3
+import sympy
+import sympy as smp
+from sympy import pprint
+
+# Find all points on the curve that have the given slope
+
+t = smp.symbols('t')
+
+x = t + (1/t)
+y = t - (1/t)
+
+dy_dt = smp.diff(y, t)
+dx_dt = smp.diff(x, t)
+dy_dx = (dy_dt/dx_dt)
+
+equation = dy_dx - 1
+
+print("\ndy/dx  ==  \n")
+pprint(dy_dx)
+print("")
+
+print("\nEquation to Solve  ==  \n")
+pprint(equation)
+print("")
+
+# Solve() Solves an equation that has been (equaled to zero)
+print("\nSolution  ==  \n")
+pprint(smp.solvers.solve(equation, t))
+print("")

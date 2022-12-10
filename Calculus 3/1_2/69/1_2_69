@@ -1,0 +1,27 @@
+#!/usr/bin/python3
+import sympy as smp
+from sympy import pprint
+import numpy as np
+
+t = smp.symbols('t')
+
+t_eval = (np.pi/4)
+
+x = t + (1/t)
+y = t - (1/t)
+
+t_eval = 1
+
+dy_dt = smp.diff(y, t)
+dx_dt = smp.diff(x, t)
+dy_dx = (dy_dt/dx_dt)
+
+result = dy_dx.subs(t, 1)
+
+print("\ndy/dx  ==  \n")
+pprint(dy_dx)
+print("")
+
+print("\nSlope at point 1 ==  \n")
+pprint(result)
+print("")

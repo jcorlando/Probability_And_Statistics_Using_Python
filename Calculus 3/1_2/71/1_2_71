@@ -1,0 +1,28 @@
+#!/usr/bin/python3
+import sympy
+import sympy as smp
+from sympy import pprint
+
+# Find all points on the curve that have the given slope
+
+t = smp.symbols('t')
+
+x = 4*smp.cos(t)
+y = 4*smp.sin(t)
+
+dy_dt = smp.diff(y, t)
+dx_dt = smp.diff(x, t)
+dy_dx = (dy_dt/dx_dt)
+
+print("\ndy/dx  ==  \n")
+pprint(dy_dx)
+print("")
+
+# Values Obtained Numerically
+value = 0
+while value <= 2*smp.pi:
+    if dx_dt.subs(t, value) != 0 and (0.499 <= dy_dx.subs(t, value) <= 0.501):
+        print(value)
+    value += 0.001
+
+# The exact Solution also exists t - arctan(-2)
